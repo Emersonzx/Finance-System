@@ -44,15 +44,21 @@ Error generating stack: `+o.message+`
   body, html {
     margin: 0;
     padding: 0;
+    
+    
   }
-`,R0=H.div`
+    
+ `,R0=H.div`
   background: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    
+    
 `,j0=H.div`
   background: linear-gradient(to right, #09093d, #193283);
   height: 150px;
   text-align: center;
+  
 `,O0=H.h1`
   color: white;
   margin: 0;
@@ -60,7 +66,7 @@ Error generating stack: `+o.message+`
   padding-top: 30px;
 `,D0=H.div`
   margin: auto;
-  max-width: 980px;
+  max-width:900px ;
   margin-bottom: 50px;
 `,En={food:{title:"Alimentação",color:"blue",expense:!0},rent:{title:"aluguel",color:"brown",expense:!0},salary:{title:"salário",color:"green",expense:!1},healthcare:{title:"saúde",color:"yellow",expense:!0}},F0=()=>{let e=new Date;return`${e.getFullYear()}-${e.getMonth()+1}`},M0=(e,t)=>{let n=[],[r,l]=t.split("-");for(let o in e)e[o].date.getFullYear()===parseInt(r)&&e[o].date.getMonth()+1===parseInt(l)&&n.push(e[o]);return n},wa=e=>e<10?`0${e}`:`${e}`,A0=e=>{let t=e.getFullYear(),n=e.getMonth()+1,r=e.getDate();return`${wa(r)}/${wa(n)}/${t}`},U0=e=>{let[t,n]=e.split("-");return`${["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","outubro","Novembro","Dezembro"][parseInt(n)-1]} de ${t}`},B0=e=>{let[t,n,r]=e.split("-");return new Date(parseInt(t),parseInt(n)-1,parseInt(r))},V0=H.table`
   width: 100%;
