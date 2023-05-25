@@ -71,11 +71,16 @@ if (storedList) {
   const handleAddItem = (item: Item) => {
     setList([...list, item]);
   };
+  const handleRemoveItem = (item: Item) => {
+    const updatedList = list.filter((listItem) => listItem !== item);
+    setList(updatedList);
+    
+  };
 
   return (
     <C.Container>
       <C.Header>
-        <C.HeaderText>Sistema Financeiro </C.HeaderText>
+        <C.HeaderText>Minhas Finanças</C.HeaderText>
       </C.Header>
       <C.Body>
         <InfoArea
@@ -85,7 +90,7 @@ if (storedList) {
           expense={expense}
         />
         <InputArea onAdd={handleAddItem} />
-        <TableArea list={filteredList} />
+        <TableArea list={filteredList} onRemove={handleRemoveItem} />
       </C.Body>
     </C.Container>
   );

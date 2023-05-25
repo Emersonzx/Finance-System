@@ -24,6 +24,8 @@ export const Header = styled.div`
   height: 150px;
   text-align: center;
   
+  
+  
 `;
 
 export const HeaderText = styled.h1`
@@ -35,6 +37,6 @@ export const HeaderText = styled.h1`
 
 export const Body = styled.div`
   margin: auto;
-  max-width:800px ;
   margin-bottom: 50px;
+  max-width:1000px ;
 `;

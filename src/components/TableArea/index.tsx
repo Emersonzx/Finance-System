@@ -4,8 +4,16 @@ import { TableItem } from "../TableItem";
 
 type Props = {
   list: Item[];
+  onRemove: (item: Item) => void;  // Update the prop name to 'onRemove'
 };
-export const TableArea = ({ list }: Props) => {
+
+export const TableArea = ({ list, onRemove }: Props) => {
+  const handleRemoveItem = (item: Item) => {
+    const updatedList = list.filter((listItem) => listItem !== item);
+    onRemove(item);  // Call the 'onRemove' prop with the removed item
+    localStorage.setItem("list", JSON.stringify(updatedList));
+  };
+
   return (
     <C.Table>
       <thead>
@@ -18,7 +26,11 @@ export const TableArea = ({ list }: Props) => {
       </thead>
       <tbody>
         {list.map((item, index) => (
-          <TableItem key={index} item={item}></TableItem>
+          <TableItem
+            key={index}
+            item={item}
+            onRemove={handleRemoveItem}
+          ></TableItem>
         ))}
       </tbody>
     </C.Table>
